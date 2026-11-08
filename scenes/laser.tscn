@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b4df85xmd0gdo"]
+
+[ext_resource type="Texture2D" uid="uid://df5ogf1gchjcm" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp1.png" id="1_dakmh"]
+[ext_resource type="Texture2D" uid="uid://cjhmkpgmiav88" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp2.png" id="2_xjiwp"]
+[ext_resource type="Texture2D" uid="uid://qsk1l253v8bc" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp3.png" id="3_iuany"]
+[ext_resource type="Texture2D" uid="uid://mg63v85uoq42" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp4.png" id="4_id182"]
+[ext_resource type="Texture2D" uid="uid://c6hj3j2kg56uo" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp5.png" id="5_y4m2n"]
+[ext_resource type="Texture2D" uid="uid://dbhpckthq28lh" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp6.png" id="6_6j5fe"]
+[ext_resource type="Texture2D" uid="uid://doojlpxu5hs6l" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp7.png" id="7_dk18q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upi4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dakmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xjiwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iuany")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_id182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y4m2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6j5fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dk18q")
+}],
+"loop": 1,
+"name": &"laser",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upi4o"]
+size = Vector2(22, 15)
+
+[node name="Laser" type="Area2D" unique_id=1930073370]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578176208]
+sprite_frames = SubResource("SpriteFrames_upi4o")
+animation = &"laser"
+frame_progress = 0.7120545
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1311620457]
+position = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_upi4o")
