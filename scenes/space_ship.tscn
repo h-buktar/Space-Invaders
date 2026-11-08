@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://objgigtyxr5j" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship6/Ship6.png" id="1_dp8cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upi4o"]
-size = Vector2(116.5, 67.5)
+size = Vector2(126, 77.75)
 
 [sub_resource type="GDScript" id="GDScript_jy7xo"]
 script/source = "extends CollisionShape2D
@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="SpaceShip" type="CharacterBody2D" unique_id=1406645004]
+[node name="Player" type="CharacterBody2D" unique_id=1406645004]
 script = ExtResource("1_bt5oy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936587697]
@@ -29,10 +29,13 @@ rotation = -1.5707964
 texture = ExtResource("1_dp8cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587590898]
-position = Vector2(560.75, 402.25)
+position = Vector2(561, 404)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_upi4o")
 script = SubResource("GDScript_jy7xo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1691273763]
 position = Vector2(562, 399)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1587567374]
+position = Vector2(561, 340)

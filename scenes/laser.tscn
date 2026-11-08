@@ -1,52 +1,27 @@
 [gd_scene format=3 uid="uid://b4df85xmd0gdo"]
 
-[ext_resource type="Texture2D" uid="uid://df5ogf1gchjcm" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp1.png" id="1_dakmh"]
-[ext_resource type="Texture2D" uid="uid://cjhmkpgmiav88" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp2.png" id="2_xjiwp"]
-[ext_resource type="Texture2D" uid="uid://qsk1l253v8bc" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp3.png" id="3_iuany"]
-[ext_resource type="Texture2D" uid="uid://mg63v85uoq42" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp4.png" id="4_id182"]
-[ext_resource type="Texture2D" uid="uid://c6hj3j2kg56uo" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp5.png" id="5_y4m2n"]
-[ext_resource type="Texture2D" uid="uid://dbhpckthq28lh" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp6.png" id="6_6j5fe"]
-[ext_resource type="Texture2D" uid="uid://doojlpxu5hs6l" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_exp7.png" id="7_dk18q"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_upi4o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dakmh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_xjiwp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_iuany")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_id182")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_y4m2n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_6j5fe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dk18q")
-}],
-"loop": 1,
-"name": &"laser",
-"speed": 7.0
-}]
+[ext_resource type="Script" uid="uid://do0crho73lxoe" path="res://scripts/laser.gd" id="1_xjiwp"]
+[ext_resource type="Texture2D" uid="uid://cdk7pgy7aamg7" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Animations/Shots/Shot5/shot5_5.png" id="2_a7dhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upi4o"]
-size = Vector2(22, 15)
+size = Vector2(102.5, 24)
 
 [node name="Laser" type="Area2D" unique_id=1930073370]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578176208]
-sprite_frames = SubResource("SpriteFrames_upi4o")
-animation = &"laser"
-frame_progress = 0.7120545
+script = ExtResource("1_xjiwp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1311620457]
-position = Vector2(10, 3)
+position = Vector2(561, 283.25)
+rotation = 1.5707964
 shape = SubResource("RectangleShape2D_upi4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=135521815]
+position = Vector2(558.00006, 246.99998)
+rotation = -1.5707964
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_a7dhc")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1562467491]
+position = Vector2(429, 371)
+rect = Rect2(117, -9, 31, 19)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
