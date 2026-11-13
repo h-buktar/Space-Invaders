@@ -1,24 +1,17 @@
 [gd_scene format=3 uid="uid://coj3w7c3o7rt4"]
 
 [ext_resource type="Script" uid="uid://on8y0byfawtd" path="res://scripts/game.gd" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://dgdryoc2u4fy8" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://cemvetaus62y0" path="res://assets/SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Blue Nebula/Blue_Nebula_01-1024x1024.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bf5o5vfhtomdr" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b4df85xmd0gdo" path="res://scenes/laser.tscn" id="3_lnu2h"]
 
-[node name="Game" type="Node2D" unique_id=1933875203]
+[node name="Game" type="Node2D" unique_id=836509109]
 script = ExtResource("1_lbhrr")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1190593567]
-z_index = -1
-position = Vector2(551, -297)
-scale = Vector2(1, 3)
-texture = ExtResource("2_yqjtg")
+[node name="Player" parent="." unique_id=46019926 instance=ExtResource("1_uwrxv")]
+position = Vector2(-4, 7)
 
-[node name="SpaceShip" parent="." unique_id=1406645004 instance=ExtResource("1_uwrxv")]
-position = Vector2(3, 1)
+[node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=587286049]
+position = Vector2(270, 868)
 
-[node name="Laser" parent="." unique_id=1930073370 instance=ExtResource("3_lnu2h")]
-script = null
-
-[node name="PlayerSpawnpos" type="Marker2D" parent="." unique_id=1846764651]
-position = Vector2(560, 400)
+[node name="Laser" parent="." unique_id=2117593850 instance=ExtResource("3_lnu2h")]
+position = Vector2(-41, 95)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bf5o5vfhtomdr"]
+
+[ext_resource type="Texture2D" uid="uid://objgigtyxr5j" path="res://assets/free-pixel-art-enemy-spaceship-2d-sprites/PNG_Parts&Spriter_Animation/Ship6/Ship6.png" id="1_dp8cb"]
+[ext_resource type="Script" uid="uid://wuoscyc32377" path="res://scripts/player.gd" id="1_g2els"]
+
+[node name="Player" type="CharacterBody2D" unique_id=46019926 groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=323805206]
+position = Vector2(253, 866)
+rotation = -1.5707964
+texture = ExtResource("1_dp8cb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=728767386]
+polygon = PackedVector2Array(237, 811, 244, 808, 258, 808, 266, 812, 266, 812, 276, 817, 279, 830, 280, 844, 290, 873, 285, 882, 285, 882, 278, 885, 279, 896, 282, 911, 285, 924, 219, 926, 221, 909, 221, 909, 224, 894, 224, 894, 226, 884, 220, 881, 216, 873, 223, 840, 223, 840, 225, 831, 227, 819)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=752846455]
+position = Vector2(253, 805)

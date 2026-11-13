@@ -13,7 +13,6 @@ config_version=5
 config/name="Space Invaders"
 run/main_scene="uid://coj3w7c3o7rt4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
